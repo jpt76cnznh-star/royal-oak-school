@@ -152,6 +152,9 @@ function Navbar() {
         <Link to="/notices" onClick={() => setMenuOpen(false)}>
           Notices
         </Link>
+         <Link to="/donate" onClick={() => setMenuOpen(false)}>
+          Donate
+        </Link>
 
       </div>
 
