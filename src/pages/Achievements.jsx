@@ -92,23 +92,28 @@ function Achievements() {
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
       <img
-        src="/src/assets/alumni1.jpeg"
-        alt="Rahul Sharma"
+        src="/src/assets/PrabhatiBaruah.jpeg"
+        alt="Prabhati Baruah"
         className="w-full h-80 object-cover"
       />
 
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
-          Rahul Sharma
+          Prabhati Baruah Khound
         </h3>
 
         <p className="mt-3 text-blue-900 font-semibold">
-          Software Engineer at Google
+         Deputy Provident Fund Commissioner at A.T.E.P.F.O ( Assam Tea Employees Provident Fund Organization) 
         </p>
 
         <p className="mt-2 text-gray-600">
-          Batch of 2018
+          Batch of 2006
+          Smt. Prabhati Baruah Khound (HSLC Batch 2006), an alumna of Royal Oak High School, 
+          Jorhat, is currently serving as Deputy Provident Fund Commissioner at ATEPFO, Assam Government. 
+          She completed her Higher Secondary education from Salt Brook Academy, Dibrugarh, and earned a B.E. in Electronics & Communication Engineering from Visvesvaraya Technological University. 
+          She began her professional career as a Probationary Officer at Canara Bank in 2013 before joining ATEPFO in 2014.
+
         </p>
 
       </div>
