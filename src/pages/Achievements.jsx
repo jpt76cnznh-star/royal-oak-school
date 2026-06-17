@@ -92,7 +92,7 @@ function Achievements() {
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
       <img
-        src="/src/assets/PrabhatiBaruah.jpeg"
+        src="/src/assets/alumni1.jpeg"
         alt="Prabhati Baruah"
         className="w-full h-80 object-cover"
       />
@@ -125,22 +125,26 @@ function Achievements() {
 
       <img
         src="/src/assets/alumni2.jpeg"
-        alt="Ananya Das"
+        alt="Niraj Kankani"
         className="w-full h-80 object-cover"
       />
 
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
-          Ananya Das
+          Niraj Kankani
         </h3>
 
         <p className="mt-3 text-blue-900 font-semibold">
-          Doctor at AIIMS
+          Entrepreneur
         </p>
 
         <p className="mt-2 text-gray-600">
-          Batch of 2017
+          Batch of 2003
+          Niraj Kankani (HSLC Batch 2003) is an alumnus of Royal Oak High School, Jorhat. 
+          A Commerce graduate from J.B. College, Jorhat (2008), he is a successful entrepreneur in the electronics industry.
+           After gaining experience in the sector from 2009, he became a business partner and later established his own venture in 2013. 
+           Today,he owns and operates three electronics showrooms dealing in both wholesale and retail sales of leading brands such as Samsung and LG.
         </p>
 
       </div>
@@ -150,23 +154,28 @@ function Achievements() {
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
       <img
-        src="/src/assets/alumni2.jpeg"
-        alt="Ananya Das"
+        src="/src/assets/alumni3.jpeg"
+        alt="Abhijit Ranjan Roy"
         className="w-full h-80 object-cover"
       />
 
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
-          Ananya Das
+          Abhijit Ranjan Roy
         </h3>
 
         <p className="mt-3 text-blue-900 font-semibold">
-          Doctor at AIIMS
+          Entrepreneur
         </p>
 
         <p className="mt-2 text-gray-600">
-          Batch of 2017
+          Batch of 2001
+          Abhijit Ranjan Roy (HSLC Batch 2001) is an alumnus of Royal Oak High School, 
+          Jorhat and a respected entrepreneur in Jorhat’s jewellery sector. He began his professional journey in 2002 by assisting his late father in the family business, 
+          where he learned the fundamentals of accounting, customer relations, and business management.Drawing upon the discipline, values, and work ethic instilled during his school years, 
+          he steadily built upon the family legacy. He credits Royal Oak High School, its dedicated teachers, and especially Principal Zaman Sir for shaping his sense of responsibility, integrity, and commitment to excellence.
+          With over 24 years of experience in the jewellery industry, he continues to lead his enterprise with a strong focus on customer trust, product purity, and ethical business practices. He remains grateful to his school, mentors, and family for providing the foundation of his personal and professional success.
         </p>
 
       </div>
@@ -176,51 +185,27 @@ function Achievements() {
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
       <img
-        src="/src/assets/alumni2.jpeg"
-        alt="Ananya Das"
+        src="/src/assets/alumni4.jpeg"
+        alt="Anubhav Gogoi"
         className="w-full h-80 object-cover"
       />
 
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
-          Ananya Das
+          Anubhav Gogoi
         </h3>
 
         <p className="mt-3 text-blue-900 font-semibold">
-          Doctor at AIIMS
-        </p>
-
-        <p className="mt-2 text-gray-600">
-          Batch of 2017
-        </p>
-
-      </div>
-
-    </div>
-
-
-    {/* Alumni Card 5 */}
-    <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
-
-      <img
-        src="/src/assets/alumni3.jpeg"
-        alt="Arjun Bora"
-        className="w-full h-80 object-cover"
-      />
-
-      <div className="p-8">
-
-        <h3 className="text-2xl font-bold text-gray-900">
-          Arjun Bora
-        </h3>
-
-        <p className="mt-3 text-blue-900 font-semibold">
-          Entrepreneur & Startup Founder
+         Deputy Superintendent of Police (Probationer) under the Assam Police Service (APS)
         </p>
 
         <p className="mt-2 text-gray-600">
           Batch of 2016
+          Anubhav Gogoi (HSLC Batch 2016) is an alumnus of Royal Oak High School, Jorhat. He is currently undergoing training at the Lachit Barphukan Police Academy as a Deputy Superintendent of Police (Probationer) under the Assam Police Service (APS).
+After completing his Higher Secondary education in Science from NKEM Senior Secondary School, Jorhat, he earned a B.Tech in Civil Engineering from Jorhat Institute of Science and Technology under Assam Science and Technology University in 2022.
+Anubhav successfully cleared the APSC Combined Competitive Examination (CCE) 2022 in his very first attempt, securing Rank 184 and joining the Assam Accounts Service. He served as an Assistant Accounts Officer under the Department of Finance, Government of Assam, for nearly two years.
+Demonstrating exceptional perseverance and dedication, he appeared for the APSC CCE once again and secured Rank 13 in APSC CCE 2024, earning a place in the prestigious Assam Police Service (APS). His journey reflects hard work, determination, and a commitment to public service.
         </p>
 
       </div>
