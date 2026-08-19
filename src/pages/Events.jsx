@@ -1,75 +1,7 @@
-import { useEffect, useState } from "react"
-
-import {
-  collection,
-  onSnapshot,
-  query,
-  orderBy,
-} from "firebase/firestore"
-
-import { db } from "../firebase"
-
-// Import Event Images
-import event1 from "../assets/event1.jpg"
-import event2 from "../assets/event2.jpg"
-import event3 from "../assets/event3.jpg"
-import event4 from "../assets/event4.jpg"
-import event5 from "../assets/event5.jpg"
-import event6 from "../assets/event6.jpg"
-import event7 from "../assets/event7.jpg"
-import event8 from "../assets/event8.jpg"
-
-
-
-
-// Image Array
-const eventImages = {
-
-  "Sports Day": event1,
-
-  "Saraswati Puja": event2,
-
-  "Outdoor Visit": event3,
-
-  "Teachers Day": event4,
-
-  "Educational Visit": event5,
-
-  "Children's Day": event6,
-
-  "Chritmas Celebration": event7,
-
-  "Independence Day": event8,
-}
+import eventsData from "../data/eventsData"
 
 function Events() {
-
-  const [events, setEvents] = useState([])
-
-  useEffect(() => {
-
-    const q = query(
-      collection(db, "events"),
-      orderBy("createdAt", "desc")
-    )
-
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-
-      const eventsArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }))
-
-      setEvents(eventsArray)
-
-    })
-
-    return () => unsubscribe()
-
-  }, [])
-
   return (
-
     <section className="pt-32 pb-24 bg-gray-50 min-h-screen">
 
       <div className="max-w-7xl mx-auto px-6">
@@ -87,7 +19,8 @@ function Events() {
 
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
             Explore school activities, programs,
-            competitions, celebrations, and upcoming events.
+            competitions, celebrations, and memorable
+            moments from Royal Oak School.
           </p>
 
         </div>
@@ -95,19 +28,19 @@ function Events() {
         {/* Events */}
         <div className="mt-20 grid md:grid-cols-2 gap-8">
 
-          {events.map((event, index) => (
+          {eventsData.map((event) => (
 
             <div
               key={event.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition"
+              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition duration-300"
             >
 
               {/* Event Image */}
-             <img
-  src={eventImages[event.title]}
-  alt={event.title}
-  className="w-full h-64 object-cover"
-/>
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-64 object-cover"
+              />
 
               {/* Event Content */}
               <div className="p-8">
@@ -116,6 +49,14 @@ function Events() {
                   {event.title}
                 </h2>
 
+                {/* Date */}
+                {event.date && (
+                  <p className="mt-2 text-blue-900 font-medium">
+                    {event.date}
+                  </p>
+                )}
+
+                {/* Description */}
                 <p className="mt-6 text-gray-600 leading-7">
                   {event.description}
                 </p>

@@ -10,49 +10,47 @@ import {
   updateDoc,
 } from "firebase/firestore"
 
-import { signOut } from "firebase/auth"
-
 import { db, auth } from "../firebase"
+import { signOut } from "firebase/auth"
 
 function Admin() {
 
-  // Logout
-  const handleLogout = async () => {
-
-    await signOut(auth)
-
-    alert("Logged Out")
-
-  }
-
-  // Notice States
   const [title, setTitle] = useState("")
   const [category, setCategory] = useState("")
   const [description, setDescription] = useState("")
 
-  // Notices Data
   const [notices, setNotices] = useState([])
 
-  // Notice Edit States
   const [editingId, setEditingId] = useState(null)
   const [editTitle, setEditTitle] = useState("")
   const [editDescription, setEditDescription] = useState("")
 
-  // Event States
-  const [eventTitle, setEventTitle] = useState("")
-  const [eventDescription, setEventDescription] = useState("")
+  // -----------------------------
+  // Logout
+  // -----------------------------
 
-  // Events Data
-  const [events, setEvents] = useState([])
+  const handleLogout = async () => {
 
-  // Event Edit States
-  const [editingEventId, setEditingEventId] = useState(null)
+    try {
 
-  const [editEventTitle, setEditEventTitle] = useState("")
+      await signOut(auth)
 
-  const [editEventDescription, setEditEventDescription] = useState("")
+      alert("Logged Out")
 
-  // Fetch Notices
+    } catch (error) {
+
+      console.log(error)
+
+      alert("Error logging out")
+
+    }
+
+  }
+
+  // -----------------------------
+  // Get Notices
+  // -----------------------------
+
   useEffect(() => {
 
     const unsubscribe = onSnapshot(
@@ -73,28 +71,10 @@ function Admin() {
 
   }, [])
 
-  // Fetch Events
-  useEffect(() => {
-
-    const unsubscribe = onSnapshot(
-      collection(db, "events"),
-      (snapshot) => {
-
-        const eventsArray = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }))
-
-        setEvents(eventsArray)
-
-      }
-    )
-
-    return () => unsubscribe()
-
-  }, [])
-
+  // -----------------------------
   // Add Notice
+  // -----------------------------
+
   const handleSubmit = async (e) => {
 
     e.preventDefault()
@@ -126,37 +106,10 @@ function Admin() {
 
   }
 
-  // Add Event
-  const handleEventSubmit = async (e) => {
-
-    e.preventDefault()
-
-    try {
-
-      await addDoc(collection(db, "events"), {
-
-        title: eventTitle,
-        description: eventDescription,
-        createdAt: serverTimestamp(),
-
-      })
-
-      alert("Event Added")
-
-      setEventTitle("")
-      setEventDescription("")
-
-    } catch (error) {
-
-      console.log(error)
-
-      alert("Error adding event")
-
-    }
-
-  }
-
+  // -----------------------------
   // Delete Notice
+  // -----------------------------
+
   const handleDelete = async (id) => {
 
     try {
@@ -175,7 +128,22 @@ function Admin() {
 
   }
 
+  // -----------------------------
+  // Start Editing Notice
+  // -----------------------------
+
+  const handleEdit = (notice) => {
+
+    setEditingId(notice.id)
+    setEditTitle(notice.title)
+    setEditDescription(notice.description)
+
+  }
+
+  // -----------------------------
   // Update Notice
+  // -----------------------------
+
   const handleUpdate = async (id) => {
 
     try {
@@ -190,6 +158,8 @@ function Admin() {
       alert("Notice Updated")
 
       setEditingId(null)
+      setEditTitle("")
+      setEditDescription("")
 
     } catch (error) {
 
@@ -201,48 +171,15 @@ function Admin() {
 
   }
 
-  // Delete Event
-  const handleEventDelete = async (id) => {
+  // -----------------------------
+  // Cancel Editing
+  // -----------------------------
 
-    try {
+  const handleCancelEdit = () => {
 
-      await deleteDoc(doc(db, "events", id))
-
-      alert("Event Deleted")
-
-    } catch (error) {
-
-      console.log(error)
-
-      alert("Error deleting event")
-
-    }
-
-  }
-
-  // Update Event
-  const handleEventUpdate = async (id) => {
-
-    try {
-
-      await updateDoc(doc(db, "events", id), {
-
-        title: editEventTitle,
-        description: editEventDescription,
-
-      })
-
-      alert("Event Updated")
-
-      setEditingEventId(null)
-
-    } catch (error) {
-
-      console.log(error)
-
-      alert("Error updating event")
-
-    }
+    setEditingId(null)
+    setEditTitle("")
+    setEditDescription("")
 
   }
 
@@ -254,291 +191,201 @@ function Admin() {
 
         <div className="bg-white shadow-xl rounded-3xl p-10">
 
-          {/* Heading */}
+          {/* -------------------------------- */}
+          {/* Header */}
+          {/* -------------------------------- */}
+
           <h1 className="text-4xl font-bold text-blue-900">
-            Admin Dashboard
+            Admin Notice Panel
           </h1>
 
           <p className="mt-3 text-gray-600">
-            Manage notices and events.
+            Add, edit, and manage school notices and announcements.
           </p>
 
+
+          {/* -------------------------------- */}
+          {/* Add Notice */}
+          {/* -------------------------------- */}
+
+          <form
+            onSubmit={handleSubmit}
+            className="mt-10 flex flex-col gap-6"
+          >
+
+            <input
+              type="text"
+              placeholder="Notice Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="border p-4 rounded-xl outline-none focus:ring-2 focus:ring-blue-900"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="border p-4 rounded-xl outline-none focus:ring-2 focus:ring-blue-900"
+              required
+            />
+
+            <textarea
+              placeholder="Notice Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="border p-4 rounded-xl outline-none focus:ring-2 focus:ring-blue-900 h-40 resize-none"
+              required
+            />
+
+            <button
+              type="submit"
+              className="bg-blue-900 text-white py-4 rounded-xl hover:bg-blue-800 transition"
+            >
+              Add Notice
+            </button>
+
+          </form>
+
+
+          {/* -------------------------------- */}
           {/* Logout */}
+          {/* -------------------------------- */}
+
           <button
             onClick={handleLogout}
-            className="mt-6 bg-red-500 text-white px-6 py-3 rounded-xl hover:bg-red-600 transition"
+            className="mt-6 w-full bg-red-500 text-white py-3 rounded-xl hover:bg-red-600 transition"
           >
             Logout
           </button>
 
-          {/* Add Notice */}
+
+          {/* -------------------------------- */}
+          {/* Existing Notices */}
+          {/* -------------------------------- */}
+
           <div className="mt-16">
 
-            <h2 className="text-3xl font-bold text-blue-900">
-              Add Notice
-            </h2>
-
-            <form
-              onSubmit={handleSubmit}
-              className="mt-8 flex flex-col gap-6"
-            >
-
-              <input
-                type="text"
-                placeholder="Notice Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="border p-4 rounded-xl outline-none"
-                required
-              />
-
-              <input
-                type="text"
-                placeholder="Category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                className="border p-4 rounded-xl outline-none"
-                required
-              />
-
-              <textarea
-                placeholder="Notice Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                className="border p-4 rounded-xl outline-none h-40 resize-none"
-                required
-              />
-
-              <button
-                type="submit"
-                className="bg-blue-900 text-white py-4 rounded-xl hover:bg-blue-800 transition"
-              >
-                Add Notice
-              </button>
-
-            </form>
-
-          </div>
-
-          {/* Existing Notices */}
-          <div className="mt-20">
-
-            <h2 className="text-3xl font-bold text-blue-900">
+            <h2 className="text-2xl font-bold text-blue-900">
               Existing Notices
             </h2>
 
             <div className="mt-8 flex flex-col gap-6">
 
-              {notices.map((notice) => (
+              {notices.length === 0 ? (
 
-                <div
-                  key={notice.id}
-                  className="bg-gray-100 p-6 rounded-2xl"
-                >
+                <p className="text-gray-500">
+                  No notices available.
+                </p>
 
-                  {editingId === notice.id ? (
+              ) : (
 
-                    <>
+                notices.map((notice) => (
 
-                      <input
-                        type="text"
-                        value={editTitle}
-                        onChange={(e) => setEditTitle(e.target.value)}
-                        className="border p-3 rounded-xl w-full"
-                      />
+                  <div
+                    key={notice.id}
+                    className="bg-gray-100 p-6 rounded-2xl"
+                  >
 
-                      <textarea
-                        value={editDescription}
-                        onChange={(e) => setEditDescription(e.target.value)}
-                        className="border p-3 rounded-xl w-full mt-4 h-32"
-                      />
+                    {editingId === notice.id ? (
 
-                      <button
-                        onClick={() => handleUpdate(notice.id)}
-                        className="mt-4 bg-green-600 text-white px-5 py-2 rounded-xl"
-                      >
-                        Save
-                      </button>
+                      /* -------------------------------- */
+                      /* Edit Notice */
+                      /* -------------------------------- */
 
-                    </>
+                      <div className="flex flex-col gap-4">
 
-                  ) : (
+                        <input
+                          type="text"
+                          value={editTitle}
+                          onChange={(e) =>
+                            setEditTitle(e.target.value)
+                          }
+                          className="border p-3 rounded-xl outline-none"
+                        />
 
-                    <>
+                        <textarea
+                          value={editDescription}
+                          onChange={(e) =>
+                            setEditDescription(e.target.value)
+                          }
+                          className="border p-3 rounded-xl outline-none h-32 resize-none"
+                        />
 
-                      <h3 className="text-xl font-semibold">
-                        {notice.title}
-                      </h3>
+                        <div className="flex gap-3">
 
-                      <p className="mt-2 text-gray-600">
-                        {notice.description}
-                      </p>
+                          <button
+                            onClick={() =>
+                              handleUpdate(notice.id)
+                            }
+                            className="bg-green-600 text-white px-5 py-2 rounded-xl hover:bg-green-700 transition"
+                          >
+                            Save
+                          </button>
 
-                      <div className="flex gap-4 mt-4">
+                          <button
+                            onClick={handleCancelEdit}
+                            className="bg-gray-500 text-white px-5 py-2 rounded-xl hover:bg-gray-600 transition"
+                          >
+                            Cancel
+                          </button>
 
-                        <button
-                          onClick={() => {
-
-                            setEditingId(notice.id)
-
-                            setEditTitle(notice.title)
-
-                            setEditDescription(notice.description)
-
-                          }}
-                          className="bg-blue-600 text-white px-5 py-2 rounded-xl"
-                        >
-                          Edit
-                        </button>
-
-                        <button
-                          onClick={() => handleDelete(notice.id)}
-                          className="bg-red-500 text-white px-5 py-2 rounded-xl"
-                        >
-                          Delete
-                        </button>
+                        </div>
 
                       </div>
 
-                    </>
+                    ) : (
 
-                  )}
+                      /* -------------------------------- */
+                      /* Display Notice */
+                      /* -------------------------------- */
 
-                </div>
+                      <>
 
-              ))}
+                        <h3 className="text-xl font-semibold">
+                          {notice.title}
+                        </h3>
 
-            </div>
+                        <p className="mt-2 text-sm text-blue-900 font-medium">
+                          {notice.category}
+                        </p>
 
-          </div>
+                        <p className="mt-3 text-gray-600">
+                          {notice.description}
+                        </p>
 
-          {/* Add Event */}
-          <div className="mt-20">
+                        <div className="mt-5 flex gap-3">
 
-            <h2 className="text-3xl font-bold text-blue-900">
-              Add Event
-            </h2>
+                          <button
+                            onClick={() =>
+                              handleEdit(notice)
+                            }
+                            className="bg-blue-900 text-white px-5 py-2 rounded-xl hover:bg-blue-800 transition"
+                          >
+                            Edit
+                          </button>
 
-            <form
-              onSubmit={handleEventSubmit}
-              className="mt-8 flex flex-col gap-6"
-            >
+                          <button
+                            onClick={() =>
+                              handleDelete(notice.id)
+                            }
+                            className="bg-red-500 text-white px-5 py-2 rounded-xl hover:bg-red-600 transition"
+                          >
+                            Delete
+                          </button>
 
-              <input
-                type="text"
-                placeholder="Event Title"
-                value={eventTitle}
-                onChange={(e) => setEventTitle(e.target.value)}
-                className="border p-4 rounded-xl outline-none"
-                required
-              />
+                        </div>
 
-              <textarea
-                placeholder="Event Description"
-                value={eventDescription}
-                onChange={(e) => setEventDescription(e.target.value)}
-                className="border p-4 rounded-xl outline-none h-40 resize-none"
-                required
-              />
+                      </>
 
-              <button
-                type="submit"
-                className="bg-green-600 text-white py-4 rounded-xl hover:bg-green-700 transition"
-              >
-                Add Event
-              </button>
+                    )}
 
-            </form>
+                  </div>
 
-          </div>
+                ))
 
-          {/* Existing Events */}
-          <div className="mt-20">
-
-            <h2 className="text-3xl font-bold text-blue-900">
-              Existing Events
-            </h2>
-
-            <div className="mt-8 flex flex-col gap-6">
-
-              {events.map((event) => (
-
-                <div
-                  key={event.id}
-                  className="bg-gray-100 p-6 rounded-2xl"
-                >
-
-                  {editingEventId === event.id ? (
-
-                    <>
-
-                      <input
-                        type="text"
-                        value={editEventTitle}
-                        onChange={(e) => setEditEventTitle(e.target.value)}
-                        className="border p-3 rounded-xl w-full"
-                      />
-
-                      <textarea
-                        value={editEventDescription}
-                        onChange={(e) => setEditEventDescription(e.target.value)}
-                        className="border p-3 rounded-xl w-full mt-4 h-32"
-                      />
-
-                      <button
-                        onClick={() => handleEventUpdate(event.id)}
-                        className="mt-4 bg-green-600 text-white px-5 py-2 rounded-xl"
-                      >
-                        Save
-                      </button>
-
-                    </>
-
-                  ) : (
-
-                    <>
-
-                      <h3 className="text-xl font-semibold">
-                        {event.title}
-                      </h3>
-
-                      <p className="mt-2 text-gray-600">
-                        {event.description}
-                      </p>
-
-                      <div className="flex gap-4 mt-4">
-
-                        <button
-                          onClick={() => {
-
-                            setEditingEventId(event.id)
-
-                            setEditEventTitle(event.title)
-
-                            setEditEventDescription(event.description)
-
-                          }}
-                          className="bg-blue-600 text-white px-5 py-2 rounded-xl"
-                        >
-                          Edit
-                        </button>
-
-                        <button
-                          onClick={() => handleEventDelete(event.id)}
-                          className="bg-red-500 text-white px-5 py-2 rounded-xl"
-                        >
-                          Delete
-                        </button>
-
-                      </div>
-
-                    </>
-
-                  )}
-
-                </div>
-
-              ))}
+              )}
 
             </div>
 
@@ -549,6 +396,7 @@ function Admin() {
       </div>
 
     </section>
+
   )
 }
 

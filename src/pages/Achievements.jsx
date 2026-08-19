@@ -96,7 +96,6 @@ function Achievements() {
         alt="Prabhati Baruah"
         className="w-full h-80 object-cover"
       />
-
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
