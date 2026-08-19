@@ -22,12 +22,54 @@ import teacher21 from "../assets/teacher11.jpeg"
 //import teacher22 from "../assets/teacher22.jpeg"
 const facultyData = [
 
+    {
+    id: 4,
+    image: teacher4,
+    name: "JITA DUTTA",
+    subject: "Mathematics",
+  }, 
+  
   {
-    id: 1,
-    image: teacher1,
-    name: "DHARITRI BORUAH",
+  id: 12,
+  image: teacher12,
+  name: "ABDUL MANNAN NEOG",
+  subject: "Mathematics",
+},
+ 
+{
+  id: 15,
+  image: teacher15,
+  name: "RUBI BORAH",
+  subject: "Science",
+},
+
+ {
+    id: 7,
+    image: teacher7,
+    name: "MEERA BORA",
     subject: "Hindi",
   },
+
+  {
+  id: 9,
+  image: teacher9,
+  name: "SYEDA SAHKIRA BEGUM",
+  subject: "All Subjects",
+},
+
+  {
+    id: 5,
+    image: teacher5,
+    name: "MAMONI BARUAH",
+    subject: "Mathematics",
+  },
+
+{
+  id: 16,
+  image: teacher16,
+  name: "ARCHANA BARUAH",
+  subject: "Computer Science",
+},
 
   {
     id: 2,
@@ -43,19 +85,6 @@ const facultyData = [
     subject: "All Subjects",
   },
 
-  {
-    id: 4,
-    image: teacher4,
-    name: "JITA DUTTA",
-    subject: "Mathematics",
-  },
-
-  {
-    id: 5,
-    image: teacher5,
-    name: "MAMONI BARUAH",
-    subject: "Mathematics",
-  },
 
   {
     id: 6,
@@ -64,52 +93,11 @@ const facultyData = [
     subject: "Fine Arts",
   },
 
-  {
-    id: 7,
-    image: teacher7,
-    name: "MEERA BORA",
-    subject: "Hindi",
-  },
-
-  /*{
-    id: 8,
-    image: teacher8,
-    name: "MOUSUMI BORDOLOI",
-    subject: "Social Studies",
-  },*/
-  {
-  id: 9,
-  image: teacher9,
-  name: "SYEDA SAHKIRA BEGUM",
-  subject: "All Subjects",
-},
-
 {
   id: 10,
   image: teacher10,
   name: "RAJU PAUL",
   subject: "Science",
-},
-
-{
-  id: 11,
-  image: teacher11,
-  name: "MUKUNDA MADHAB DAS",
-  subject: "Mathematics",
-},
-
-{
-  id: 12,
-  image: teacher12,
-  name: "ABDUL MANNAN NEOG",
-  subject: "Mathematics",
-},
-
-{
-  id: 13,
-  image: teacher13,
-  name: "YASHMIN KUTUB AHMED",
-  subject: "Other",
 },
 
 {
@@ -120,17 +108,17 @@ const facultyData = [
 },
 
 {
-  id: 15,
-  image: teacher15,
-  name: "RUBI BORAH",
-  subject: "Science",
+  id: 13,
+  image: teacher13,
+  name: "YASHMIN KUTUB AHMED",
+  subject: "Other",
 },
 
 {
-  id: 16,
-  image: teacher16,
-  name: "ARCHANA BARUAH",
-  subject: "Computer Science",
+  id: 11,
+  image: teacher11,
+  name: "MUKUNDA MADHAB DAS",
+  subject: "Mathematics",
 },
 
 {
@@ -140,17 +128,25 @@ const facultyData = [
   subject: "Other",
 },
 
-/*{
-  id: 18,
-  image: teacher18,
-  name: "PRIYAKSHI SARMA ",
-  subject: "English",
-},*/
+
+  {
+    id: 1,
+    image: teacher1,
+    name: "DHARITRI BORUAH",
+    subject: "Hindi",
+  },
 
 {
   id: 19,
   image: teacher19,
   name: "PARINITA HAZARIKA",
+  subject: "Other",
+},
+
+{
+  id: 21,
+  image: teacher21,
+  name: "TRISHNA BORAH",
   subject: "Other",
 },
 
@@ -161,12 +157,27 @@ const facultyData = [
   subject: "Regional Language",
 },
 
-{
-  id: 21,
-  image: teacher21,
-  name: "TRISHNA BORAH",
-  subject: "Other",
-},
+ 
+
+  /*{
+    id: 8,
+    image: teacher8,
+    name: "MOUSUMI BORDOLOI",
+    subject: "Social Studies",
+  },*/
+
+
+
+
+/*{
+  id: 18,
+  image: teacher18,
+  name: "PRIYAKSHI SARMA ",
+  subject: "English",
+},*/
+
+
+
 
 /*{
   id: 22,
