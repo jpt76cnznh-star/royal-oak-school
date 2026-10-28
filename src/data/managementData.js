@@ -6,28 +6,28 @@ import management4 from "../assets/management4.jpeg"
 const managementData = [
 {
     id: 1,
-    name: "Name of Management Person",
+    name: "Tehzeeb Z. Ali",
     designation: "Director",
     image: management1,
   },
  
     {
     id: 2,
-    name: "Name of Management Person",
+    name: "Arifa Zaman",
     designation: "Principal",
     image: management2,
   },
 
   {
     id: 3,
-    name: "Name of Management Person",
+    name: "Mousumi Bordoloi",
     designation: "Vice Principal",
     image: management3,
   },
 
   {
     id: 4,
-    name: "Name of Management Person",
+    name: "Mukibul Hussain",
     designation: "Administrative Head",
     image: management4,
   },
