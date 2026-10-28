@@ -20,6 +20,9 @@ import teacher19 from "../assets/teacher22.jpeg"
 import teacher20 from "../assets/teacher13.jpeg"
 import teacher21 from "../assets/teacher11.jpeg"
 //import teacher22 from "../assets/teacher22.jpeg"
+import teacher23 from "../assets/teacher23.jpeg"
+import teacher24 from "../assets/teacher24.jpeg"
+import teacher25 from "../assets/teacher25.jpeg"
 const facultyData = [
 
     {
@@ -157,7 +160,27 @@ const facultyData = [
   subject: "Regional Language",
 },
 
- 
+ {
+  id: 23,
+  image: teacher23,
+  name: "KRISHNA SAHA",
+  subject: "OTHER",
+},
+
+    {
+  id: 24,
+  image: teacher24,
+  name: "SAGORIKA BHOWMICK",
+  subject: "OTHER",
+},
+
+    {
+  id: 25,
+  image: teacher25,
+  name: "FARIMA AHMED",
+  subject: "OTHER",
+},
+
 
   /*{
     id: 8,
