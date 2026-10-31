@@ -1,14 +1,16 @@
 
 import facultyData from "../data/facultyData"
 import managementData from "../data/managementData"
+import supportingStaffData from "../data/supportingStaffData"
 import { motion } from "framer-motion"
+
 function Faculty() {
   return (
     <section className="pt-32 pb-24 bg-gray-50 min-h-screen">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
+        {/* Main Heading */}
         <div className="text-center">
 
           <p className="text-blue-900 font-semibold uppercase tracking-widest">
@@ -26,103 +28,177 @@ function Faculty() {
           </p>
 
         </div>
-{/* Management Section */}
 
-<div className="mt-20">
+        {/* Management Section */}
+        <div className="mt-20">
 
-  <div className="text-center">
+          <div className="text-center">
 
-    <p className="text-blue-900 font-semibold uppercase tracking-widest">
-      Management
-    </p>
+            <p className="text-blue-900 font-semibold uppercase tracking-widest">
+              Management
+            </p>
 
-    <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
-      School Management & Administration
-    </h2>
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+              School Management & Administration
+            </h2>
 
-    <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
-      Meet the dedicated members of our management and administrative
-      team who guide the institution and support its continued growth.
-    </p>
+            <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+              Meet the dedicated members of our management and administrative
+              team who guide the institution and support its continued growth.
+            </p>
 
-  </div>
+          </div>
 
-  {/* Management Grid */}
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-  <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {managementData.map((person, index) => (
 
-    {managementData.map((person, index) => (
+              <motion.div
+                key={person.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition"
+              >
 
-      <motion.div
-        key={person.id}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: index * 0.1,
-        }}
-        viewport={{ once: true }}
-        className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition"
-      >
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="w-full h-80 object-cover"
+                />
 
-        <img
-          src={person.image}
-          alt={person.name}
-          className="w-full h-80 object-cover"
-        />
+                <div className="p-6 text-center">
 
-        <div className="p-6 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {person.name}
+                  </h3>
 
-          <h3 className="text-2xl font-bold text-gray-900">
-            {person.name}
-          </h3>
+                  <p className="mt-2 text-blue-900 font-medium">
+                    {person.designation}
+                  </p>
 
-          <p className="mt-2 text-blue-900 font-medium">
-            {person.designation}
-          </p>
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
 
         </div>
 
-      </motion.div>
+        {/* Teaching Faculty Section */}
+        <div className="mt-24">
 
-    ))}
+          <div className="text-center">
 
-  </div>
+            <p className="text-blue-900 font-semibold uppercase tracking-widest">
+              Our Teachers
+            </p>
 
-</div>
-        {/* Faculty Grid */}
-        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+              Teaching Faculty
+            </h2>
 
-          {facultyData.map((teacher, index) => (
-            <motion.div
-              key={teacher.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition"
-            >
+          </div>
 
-              <img
-                src={teacher.image}
-                alt={teacher.name}
-                className="w-full h-80 object-cover"
-              />
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-              <div className="p-6">
+            {facultyData.map((teacher, index) => (
 
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {teacher.name}
-                </h2>
+              <motion.div
+                key={teacher.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition"
+              >
 
-                <p className="mt-2 text-blue-900 font-medium">
-                  {teacher.subject}
-                </p>
+                <img
+                  src={teacher.image}
+                  alt={teacher.name}
+                  className="w-full h-80 object-cover"
+                />
 
-              </div>
+                <div className="p-6">
 
-            </motion.div>
-          ))}
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    {teacher.name}
+                  </h2>
+
+                  <p className="mt-2 text-blue-900 font-medium">
+                    {teacher.subject}
+                  </p>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* Supporting Staff Section - At Bottom */}
+        <div className="mt-24">
+
+          <div className="text-center">
+
+            <p className="text-blue-900 font-semibold uppercase tracking-widest">
+              Our Team
+            </p>
+
+            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+              Supporting Staff
+            </h2>
+
+            <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+              Our supporting staff play an important role in
+              maintaining a welcoming, organized, and efficient
+              learning environment for our students and teachers.
+            </p>
+
+          </div>
+
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            {supportingStaffData.map((person, index) => (
+
+              <motion.div
+                key={person.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition"
+              >
+
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="w-full h-80 object-cover"
+                />
+
+                <div className="p-6 text-center">
+
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {person.name}
+                  </h3>
+
+                  <p className="mt-2 text-blue-900 font-medium">
+                    {person.designation}
+                  </p>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
 
         </div>
 
