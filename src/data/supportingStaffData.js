@@ -3,7 +3,7 @@ const supportingStaffData = [
     id: 1,
     name: "Staff Member 1",
   
-    image: "/src/assets/staff1.jpeg",
+    image: "/src/assets/staff1.jpeg,
   },
 
   {
