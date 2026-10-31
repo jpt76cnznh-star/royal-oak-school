@@ -3,7 +3,7 @@ import schoolBuilding from "../assets/school-building.jpeg"
 
 const historyData = [
   {
-    year: "1998",
+    year: "1989",
     title: "Foundation of Royal Oak School",
     description:
       "Royal Oak School was established at D.C.B. Road, Tarajan, Jorhat, Assam, with a vision to provide quality education and holistic development for students.",
@@ -62,11 +62,11 @@ function History() {
           <div>
 
             <h2 className="text-4xl font-bold text-gray-900">
-              A Legacy of Learning Since 1998
+              A Legacy of Learning Since 1989
             </h2>
 
             <p className="mt-6 text-gray-600 leading-8">
-              Established in 1998 at D.C.B. Road, Tarajan,
+              Established in 1989 at D.C.B. Road, Tarajan,
               Jorhat, Assam, Royal Oak School was founded with
               the objective of providing quality education while
               fostering discipline, integrity, leadership, and
