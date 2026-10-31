@@ -1,14 +1,14 @@
 const supportingStaffData = [
   {
     id: 1,
-    name: "Staff Member 1",
+    name: "Staff",
   
     image: "/src/assets/staff1.jpeg,
   },
 
   {
     id: 2,
-    name: "Staff Member 2",
+    name: "Staff ",
    
     image: "/src/assets/staff2.jpeg",
   },
