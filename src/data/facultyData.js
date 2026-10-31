@@ -114,7 +114,7 @@ const facultyData = [
   id: 13,
   image: teacher13,
   name: "YASHMIN KUTUB AHMED",
-  subject: "Computer Assitant",
+  subject: "Computer Science",
 },
 
 {
@@ -128,7 +128,7 @@ const facultyData = [
   id: 17,
   image: teacher17,
   name: "WAHIDA RAHMAN",
-  subject: "Office Stuff",
+  subject: "Office Staff",
 },
 
 
@@ -150,21 +150,21 @@ const facultyData = [
   id: 21,
   image: teacher21,
   name: "TRISHNA BORAH",
-  subject: "Other",
+  subject: "All Subjects",
 },
 
 {
   id: 20,
   image: teacher20,
   name: "PRITISHA SAIKIA",
-  subject: "Others",
+  subject: "Office Staff",
 },
 
  {
   id: 23,
   image: teacher23,
   name: "KRISHNA SAHA",
-  subject: "OTHER",
+  subject: "All Subjects",
 },
 
     {
@@ -178,7 +178,7 @@ const facultyData = [
   id: 25,
   image: teacher25,
   name: "FARIMA AHMED",
-  subject: "Office Stuff",
+  subject: "Office Staff",
 },
 
 
