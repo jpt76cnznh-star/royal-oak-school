@@ -1,3 +1,5 @@
+import management1 from "../assets/staff1.jpeg"
+import management2 from "../assets/staff2.jpeg"
 const supportingStaffData = [
   {
     id: 1,
