@@ -49,7 +49,7 @@ function History() {
           </h1>
 
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-            Since 1998, Royal Oak School has been committed to
+            Since 1989, Royal Oak School has been committed to
             nurturing young minds through quality education,
             character development, and academic excellence.
           </p>
@@ -96,7 +96,7 @@ function History() {
           <div className="bg-gray-50 p-8 rounded-3xl shadow-lg text-center">
 
             <h3 className="text-5xl font-bold text-blue-900">
-              1998
+              1989
             </h3>
 
             <p className="mt-3 text-gray-600">
