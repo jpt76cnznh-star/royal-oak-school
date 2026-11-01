@@ -10,7 +10,7 @@ const stats = [
     title: "Students",
   },
   {
-    number: "80+",
+    number: "30+",
     title: "Qualified Teachers",
   },
   {
