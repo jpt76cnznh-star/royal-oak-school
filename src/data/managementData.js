@@ -14,7 +14,7 @@ const managementData = [
     {
     id: 2,
     name: "Arifa Zaman",
-    designation: "Principal",
+    designation: "Principal & Founder",
     image: management2,
   },
 
