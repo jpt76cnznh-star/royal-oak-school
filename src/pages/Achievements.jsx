@@ -1,6 +1,10 @@
 import achievementsData from "../data/achievementsData"
 import { Trophy } from "lucide-react"
 import { motion } from "framer-motion"
+import alumni1 from "../assets/alumni1.jpeg"
+import alumni2 from "../assets/alumni2.jpeg"
+import alumni3 from "../assets/alumni3.jpeg"
+import alumni4 from "../assets/alumni4.jpeg"
 
 function Achievements() {
   return (
@@ -91,11 +95,11 @@ function Achievements() {
     {/* Alumni Card 1 */}
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
-      <img
-        src="/src/assets/alumni1.jpeg"
-        alt="Prabhati Baruah"
-        className="w-full h-80 object-cover"
-      />
+     <img
+  src={alumni1}
+  alt="Prabhati Baruah Khound"
+  className="w-full h-80 object-cover"
+/>
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
@@ -123,11 +127,10 @@ function Achievements() {
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
       <img
-        src="/src/assets/alumni2.jpeg"
-        alt="Niraj Kankani"
-        className="w-full h-80 object-cover"
-      />
-
+  src={alumni2}
+  alt="Niraj Kankani"
+  className="w-full h-80 object-cover"
+/>
       <div className="p-8">
 
         <h3 className="text-2xl font-bold text-gray-900">
@@ -152,11 +155,11 @@ function Achievements() {
      {/* Alumni Card 3 */}
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
-      <img
-        src="/src/assets/alumni3.jpeg"
-        alt="Abhijit Ranjan Roy"
-        className="w-full h-80 object-cover"
-      />
+    <img
+  src={alumni3}
+  alt="Abhijit Ranjan Roy"
+  className="w-full h-80 object-cover"
+/>
 
       <div className="p-8">
 
@@ -183,11 +186,11 @@ function Achievements() {
  {/* Alumni Card 4 */}
     <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
 
-      <img
-        src="/src/assets/alumni4.jpeg"
-        alt="Anubhav Gogoi"
-        className="w-full h-80 object-cover"
-      />
+     <img
+  src={alumni4}
+  alt="Anubhav Gogoi"
+  className="w-full h-80 object-cover"
+/>
 
       <div className="p-8">
 
