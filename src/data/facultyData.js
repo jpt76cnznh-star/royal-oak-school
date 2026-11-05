@@ -29,63 +29,63 @@ const facultyData = [
     id: 4,
     image: teacher4,
     name: "JITA DUTTA",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   }, 
   
   {
   id: 12,
   image: teacher12,
   name: "ABDUL MANNAN NEOG",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
  
 {
   id: 15,
   image: teacher15,
   name: "RUBI BORAH",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
  {
     id: 7,
     image: teacher7,
     name: "MEERA BORA",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   },
 
   {
   id: 9,
   image: teacher9,
   name: "SYEDA SAHKIRA BEGUM",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
   {
     id: 5,
     image: teacher5,
     name: "MAMONI BARUAH",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   },
 
 {
   id: 16,
   image: teacher16,
   name: "ARCHANA BARUAH",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
   {
     id: 2,
     image: teacher2,
     name: "WARISHA SIDDIQUE RAHMAN",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   },
 
   {
     id: 3,
     image: teacher3,
     name: "JURI BORDOLOI",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   },
 
 
@@ -93,35 +93,35 @@ const facultyData = [
     id: 6,
     image: teacher6,
     name: "AMIT KARMAKAR",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   },
 
 {
   id: 10,
   image: teacher10,
   name: "RAJU PAUL",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
 {
   id: 14,
   image: teacher14,
   name: "ANNESHA PHUKAN",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
 {
   id: 13,
   image: teacher13,
   name: "YASHMIN KUTUB AHMED",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
 {
   id: 11,
   image: teacher11,
   name: "MUKUNDA MADHAB DAS",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
 {
@@ -136,21 +136,21 @@ const facultyData = [
     id: 1,
     image: teacher1,
     name: "DHARITRI BORUAH",
-    subject: "Assitant Teacher",
+    subject: "Assistant Teacher",
   },
 
 {
   id: 19,
   image: teacher19,
   name: "PARINITA HAZARIKA",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
 {
   id: 21,
   image: teacher21,
   name: "TRISHNA BORAH",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
 {
@@ -164,14 +164,14 @@ const facultyData = [
   id: 23,
   image: teacher23,
   name: "KRISHNA SAHA",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
     {
   id: 24,
   image: teacher24,
   name: "SAGORIKA BHOWMICK",
-  subject: "Assitant Teacher",
+  subject: "Assistant Teacher",
 },
 
     {
